@@ -19,7 +19,7 @@ namespace BenFattoAdmission.Americanas.PageObjects
 
         #region Elements
         By imgLogoAmericanas = By.Id("brd-link");
-        By txtBusqueSeuProduto = By.Id("h_search-input");
+        By txtSearchYourProduct = By.Id("h_search-input");
         #endregion
 
         #region Given
@@ -35,8 +35,8 @@ namespace BenFattoAdmission.Americanas.PageObjects
         [When(@"I search for a product using the word ""(.*)""")]
         public void WhenISearchForAProductUsingTheWord(string textToSearch)
         {
-            wait.Until(c => c.FindElement(txtBusqueSeuProduto));
-            driver.FindElement(txtBusqueSeuProduto).SendKeys(textToSearch + Keys.Enter);
+            wait.Until(c => c.FindElement(txtSearchYourProduct));
+            driver.FindElement(txtSearchYourProduct).SendKeys(textToSearch + Keys.Enter);
         }
         #endregion
     }

@@ -2,6 +2,7 @@
 using TechTalk.SpecFlow;
 using OpenQA.Selenium;
 using System;
+using NUnit.Framework;
 
 namespace BenFattoAdmission.Americanas.PageObjects
 {
@@ -41,15 +42,13 @@ namespace BenFattoAdmission.Americanas.PageObjects
         {
             wait.Until(c => c.FindElement(imgProductPicture));
             wait.Until(c => c.FindElement(lblProductFullName));
-            string productFullName = driver.FindElement(lblProductFullName).Text;
-            scenarioContext["productFullName"] = productFullName;
+            scenarioContext["productFullName"] = driver.FindElement(lblProductFullName).Text;
             wait.Until(c => c.FindElement(lblProductDescription));
-            string productDescription = driver.FindElement(lblProductDescription).Text;
-            scenarioContext["productDescription"] = productDescription;
+            scenarioContext["productDescription"] = driver.FindElement(lblProductDescription).Text;
             wait.Until(c => c.FindElement(lblProductPrice));
-            string productPrice = driver.FindElement(lblProductPrice).Text;
-            scenarioContext["productPrice"] = productPrice;
+            scenarioContext["productPrice"] = driver.FindElement(lblProductPrice).Text;
             wait.Until(c => c.FindElement(btnAddToCart));
+            Assert.AreEqual("comprar", driver.FindElement(btnAddToCart).Text);
         }
         #endregion
     }
