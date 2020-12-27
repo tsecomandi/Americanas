@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace BenFattoAdmission.Americanas.Features
+namespace Americanas.ShoppingCart.Features
 {
     using TechTalk.SpecFlow;
     using System;
